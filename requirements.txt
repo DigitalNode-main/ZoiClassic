@@ -1,0 +1,10 @@
+flask
+requests
+numpy
+scikit-learn
+aiomcache
+firebase-admin
+twilio
+base58
+pqcrypto
+starkbank-ecdsa  # Alternative cryptography package
