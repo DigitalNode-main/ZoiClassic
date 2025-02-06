@@ -18,7 +18,7 @@ import struct
 import random
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor
-from starkware.crypto.signature.signature import sign, verify
+from starkbank.ecdsa import Ecdsa, PrivateKey
 from pqcrypto.sign import dilithium5
 from twilio.rest import Client  # SMS Notifications
 import firebase_admin  # Push Notifications
@@ -72,8 +72,8 @@ class ZoiClassicBlockchain:
     def validate_transaction(self, transaction):
         message = transaction.get("message")
         signature = bytes.fromhex(transaction.get("signature"))
-        public_key = bytes.fromhex(transaction.get("public_key"))
-        return verify(message.encode(), signature, public_key)
+        public_key = PrivateKey.from_hex(transaction.get("public_key")).public_key()
+        return Ecdsa.verify(message.encode(), signature, public_key)
 
 # AI-Driven Smart Transactions and Sidechain Monitoring
 
