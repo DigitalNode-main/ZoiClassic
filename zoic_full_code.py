@@ -18,7 +18,9 @@ import struct
 import random
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor
-from starkbank-ecdsa import Ecdsa, PrivateKey
+import sys
+sys.path.append('/home/erik/.local/lib/python3.10/site-packages')  # Adjust path as needed
+from starkbank.ecdsa import Ecdsa, PrivateKey
 from pqcrypto.sign import dilithium5
 from twilio.rest import Client  # SMS Notifications
 import firebase_admin  # Push Notifications
