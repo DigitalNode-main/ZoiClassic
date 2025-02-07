@@ -18,7 +18,7 @@ import struct
 import random
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor
-from starkbank_ecdsa import Ecdsa, PrivateKey
+from starkbank-ecdsa import Ecdsa, PrivateKey
 from pqcrypto.sign import dilithium5
 from twilio.rest import Client  # SMS Notifications
 import firebase_admin  # Push Notifications
